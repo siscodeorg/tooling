@@ -1,0 +1,29 @@
+#!python
+
+import pathlib
+import subprocess
+import sys
+
+
+def should_fetch(old_loc: pathlib.Path, new_loc: pathlib.Path):
+    if not is_parent(old_loc, new_loc):
+        return False
+    return (new_loc / '.git').exists()
+
+
+def is_parent(old, new):
+    try:
+        new.relative_to(old)
+    except ValueError:
+        return False
+    return True
+
+
+def main():
+    old, new = sys.argv[1], sys.argv[2]
+    if should_fetch(pathlib.Path(old), pathlib.Path(new)):
+        subprocess.call(['git', 'fetch', '--all'])
+
+
+if __name__ == '__main__':
+    main()
