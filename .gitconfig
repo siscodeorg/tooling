@@ -23,5 +23,6 @@
 	back = switch "-"
 	unpulled = range-diff @...@{u}
 	unpushed = range-diff @{push}...@
+	can-merge = !conflicts $1
 [commit]
 	verbose = true
