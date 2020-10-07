@@ -1,0 +1,27 @@
+[diff]
+	algorithm = patience
+[pull]
+	ff = only
+[merge]
+	ff = false
+	conflictstyle = diff3
+[rerere]
+	enabled = true
+	autoUpdate = true
+[rebase]
+	missingCommitCheck = error
+[alias]
+	track = add
+	untrack = rm --cached
+	unstage = reset HEAD --
+	reject = restore --source=HEAD --staged --worktree --
+	discard = restore --
+	staged = diff --cached
+	unstaged = diff
+	peek = switch --detach
+	detach = switch --detach HEAD^0
+	back = switch "-"
+	unpulled = range-diff @...@{u}
+	unpushed = range-diff @{push}...@
+[commit]
+	verbose = true
