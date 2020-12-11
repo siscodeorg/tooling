@@ -1,0 +1,3 @@
+[submodule "editorconfigs"]
+	path = editorconfigs
+	url = https://github.com/siscodeorg/editorconfigs.git
