@@ -24,5 +24,6 @@
 	unpulled = range-diff @...@{u}
 	unpushed = range-diff @{push}...@
 	can-merge = !conflicts $1
+	trunklog = log --oneline --graph --first-parent
 [commit]
 	verbose = true
