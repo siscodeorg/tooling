@@ -25,5 +25,6 @@
 	unpushed = range-diff @{push}...@
 	can-merge = !conflicts $1
 	trunklog = log --oneline --graph --first-parent
+	branchlog = !git log --oneline --graph $1^-
 [commit]
 	verbose = true
